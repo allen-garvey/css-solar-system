@@ -1,0 +1,112 @@
+$earth_radius: 20px;
+$earth_year : 3s;
+$body_dimensions : 5000px;
+
+@mixin dimensions($radius : $earth_radius){
+	width: $radius;
+	height: $radius;
+}
+
+@mixin revolve($seconds_per_rev){
+	-webkit-animation: revolve $seconds_per_rev infinite linear;
+	-moz-animation: revolve $seconds_per_rev infinite linear;
+	-o-animation: revolve $seconds_per_rev infinite linear;
+	-ms-animation: revolve $seconds_per_rev infinite linear;
+	animation: revolve $seconds_per_rev infinite linear;
+}
+
+@mixin planet_container($name,$orbit: auto, $percentage_of_earth_year: 1){
+	.planet_container.#{$name}{
+		@include dimensions($orbit * 5);
+		@include revolve($percentage_of_earth_year * $earth_year);
+	}
+}
+
+@mixin planet($name, $percentage_of_earth_radius: 1, $color : red){
+	.#{$name} .planet{
+		@include dimensions($earth_radius * $percentage_of_earth_radius);
+		background: $color;
+	}
+}
+
+/*Demo Base Styles */
+h1{
+	text-align: center;
+}
+body{
+	font-family: Helvetica, sans-serif;
+	background: darken(midnightblue, 10%);
+	color : whitesmoke;
+	@include dimensions($body_dimensions);
+}
+
+
+/*planets base styles*/
+.planet_container{
+	position: absolute;
+	top: $body_dimensions / 2;
+	left: $body_dimensions / 2;
+	-webkit-transform-origin: top left;
+	-webkit-animation: revolve 4s infinite linear;
+}
+
+
+//revolve animation
+@-webkit-keyframes revolve {
+	0% { -webkit-transform: rotate(0deg);}
+	100% { -webkit-transform: rotate(-360deg);}
+}
+@-moz-keyframes revolve {
+	0% { -moz-transform: rotate(0deg);}
+	100% { -moz-transform: rotate(-360deg);}
+}
+@-o-keyframes revolve {
+	0% { -o-transform: rotate(0deg);}
+	100% { -o-transform: rotate(-360deg);}
+}
+@-ms-keyframes revolve {
+	0% { -ms-transform: rotate(0deg);}
+	100% { -ms-transform: rotate(-360deg);}
+}
+@keyframes revolve {
+	0% { transform: rotate(0deg);}
+	100% { transform: rotate(-360deg);}
+} 
+
+
+.planet{
+	background: red;
+	border-radius: 50%;
+	@include dimensions($earth_radius);
+	display: inline-block;
+	float: right;
+}
+
+@include planet("mercury", 0.38, tomato);
+@include planet_container("mercury", 5.8px, 0.24);
+
+@include planet("venus", 0.95, orangered);
+@include planet_container("venus", 10.8px, 0.62);
+
+@include planet("earth", 1, blue);
+@include planet_container("earth", 15px, 1);
+
+@include planet("mars", 0.53, coral);
+@include planet_container("mars", 22.7px, 1.88);
+
+@include planet("jupiter", 11.2, firebrick);
+@include planet_container("jupiter", 77.9px, 11.9);
+
+@include planet("saturn", 9.45, peachpuff);
+@include planet_container("saturn", 142.8px, 29.7);
+.ring{
+	margin-top : 90px;
+	height: 7px;
+	background: darken(tan, 30%);
+}
+
+@include planet("uranus", 4, turquoise);
+@include planet_container("uranus", 297.4px, 84.3);
+
+@include planet("neptune", 3.88, royalblue);
+@include planet_container("neptune", 450.6px, 164.8);

@@ -1,0 +1,170 @@
+/*Demo Base Styles */
+h1 {
+  text-align: center; }
+
+body {
+  font-family: Helvetica, sans-serif;
+  background: #101046;
+  color: whitesmoke;
+  width: 5000px;
+  height: 5000px; }
+
+/*planets base styles*/
+.planet_container {
+  position: absolute;
+  top: 2500px;
+  left: 2500px;
+  -webkit-transform-origin: top left;
+  -webkit-animation: revolve 4s infinite linear; }
+
+@-webkit-keyframes revolve {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-360deg); } }
+@-moz-keyframes revolve {
+  0% {
+    -moz-transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(-360deg); } }
+@-o-keyframes revolve {
+  0% {
+    -o-transform: rotate(0deg); }
+  100% {
+    -o-transform: rotate(-360deg); } }
+@-ms-keyframes revolve {
+  0% {
+    -ms-transform: rotate(0deg); }
+  100% {
+    -ms-transform: rotate(-360deg); } }
+@keyframes revolve {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(-360deg); } }
+.planet {
+  background: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  float: right; }
+
+.mercury .planet {
+  width: 7.6px;
+  height: 7.6px;
+  background: tomato; }
+
+.planet_container.mercury {
+  width: 29px;
+  height: 29px;
+  -webkit-animation: revolve 0.72s infinite linear;
+  -moz-animation: revolve 0.72s infinite linear;
+  -o-animation: revolve 0.72s infinite linear;
+  -ms-animation: revolve 0.72s infinite linear;
+  animation: revolve 0.72s infinite linear; }
+
+.venus .planet {
+  width: 19px;
+  height: 19px;
+  background: orangered; }
+
+.planet_container.venus {
+  width: 54px;
+  height: 54px;
+  -webkit-animation: revolve 1.86s infinite linear;
+  -moz-animation: revolve 1.86s infinite linear;
+  -o-animation: revolve 1.86s infinite linear;
+  -ms-animation: revolve 1.86s infinite linear;
+  animation: revolve 1.86s infinite linear; }
+
+.earth .planet {
+  width: 20px;
+  height: 20px;
+  background: blue; }
+
+.planet_container.earth {
+  width: 75px;
+  height: 75px;
+  -webkit-animation: revolve 3s infinite linear;
+  -moz-animation: revolve 3s infinite linear;
+  -o-animation: revolve 3s infinite linear;
+  -ms-animation: revolve 3s infinite linear;
+  animation: revolve 3s infinite linear; }
+
+.mars .planet {
+  width: 10.6px;
+  height: 10.6px;
+  background: coral; }
+
+.planet_container.mars {
+  width: 113.5px;
+  height: 113.5px;
+  -webkit-animation: revolve 5.64s infinite linear;
+  -moz-animation: revolve 5.64s infinite linear;
+  -o-animation: revolve 5.64s infinite linear;
+  -ms-animation: revolve 5.64s infinite linear;
+  animation: revolve 5.64s infinite linear; }
+
+.jupiter .planet {
+  width: 224px;
+  height: 224px;
+  background: firebrick; }
+
+.planet_container.jupiter {
+  width: 389.5px;
+  height: 389.5px;
+  -webkit-animation: revolve 35.7s infinite linear;
+  -moz-animation: revolve 35.7s infinite linear;
+  -o-animation: revolve 35.7s infinite linear;
+  -ms-animation: revolve 35.7s infinite linear;
+  animation: revolve 35.7s infinite linear; }
+
+.saturn .planet {
+  width: 189px;
+  height: 189px;
+  background: peachpuff; }
+
+.planet_container.saturn {
+  width: 714px;
+  height: 714px;
+  -webkit-animation: revolve 89.1s infinite linear;
+  -moz-animation: revolve 89.1s infinite linear;
+  -o-animation: revolve 89.1s infinite linear;
+  -ms-animation: revolve 89.1s infinite linear;
+  animation: revolve 89.1s infinite linear; }
+
+.ring {
+  margin-top: 90px;
+  height: 7px;
+  background: #8e6937; }
+
+.uranus .planet {
+  width: 80px;
+  height: 80px;
+  background: turquoise; }
+
+.planet_container.uranus {
+  width: 1487px;
+  height: 1487px;
+  -webkit-animation: revolve 252.9s infinite linear;
+  -moz-animation: revolve 252.9s infinite linear;
+  -o-animation: revolve 252.9s infinite linear;
+  -ms-animation: revolve 252.9s infinite linear;
+  animation: revolve 252.9s infinite linear; }
+
+.neptune .planet {
+  width: 77.6px;
+  height: 77.6px;
+  background: royalblue; }
+
+.planet_container.neptune {
+  width: 2253px;
+  height: 2253px;
+  -webkit-animation: revolve 494.4s infinite linear;
+  -moz-animation: revolve 494.4s infinite linear;
+  -o-animation: revolve 494.4s infinite linear;
+  -ms-animation: revolve 494.4s infinite linear;
+  animation: revolve 494.4s infinite linear; }
+
+/*# sourceMappingURL=planets.css.map */
